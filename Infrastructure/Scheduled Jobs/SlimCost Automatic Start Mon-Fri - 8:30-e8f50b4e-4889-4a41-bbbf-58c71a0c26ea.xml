@@ -1,30 +1,30 @@
 <joblist>
   <job>
-    <description>SlimCost Automatic Start Monday-Friday</description>
+    <description>SlimCost Automatic Start Monday-Friday 08:30</description>
     <executionEnabled>true</executionEnabled>
     <group>Infrastructure/Scheduled Jobs</group>
-    <id>85e9916e-446b-4d07-8c57-a5375fa502db</id>
+    <id>e8f50b4e-4889-4a41-bbbf-58c71a0c26ea</id>
     <loglevel>INFO</loglevel>
-    <name>SlimCost Automatic Start Mon-Fri</name>
+    <name>SlimCost Automatic Start Mon-Fri - 8:30</name>
     <nodeFilterEditable>true</nodeFilterEditable>
     <schedule>
       <month month='*' />
-      <time hour='09' minute='00' seconds='0' />
+      <time hour='08' minute='30' seconds='0' />
       <weekday day='FRI,MON,THU,TUE,WED' />
       <year year='*' />
     </schedule>
     <scheduleEnabled>true</scheduleEnabled>
     <sequence keepgoing='true' strategy='node-first'>
       <command>
-        <description>Start Logrono AS Selenium Servers</description>
+        <description>Start Logrono AS Scheduled Servers</description>
         <jobref group='Infrastructure/Subjobs' name='Operations SlimCost' nodeStep='true'>
-          <arg line='-Action start -Panel logrono-es -Target Selenium+AS+SlimCost' />
+          <arg line='-Action start -Panel logrono-es -Target AutoStart+AS+SlimCost' />
         </jobref>
       </command>
       <command>
-        <description>Start Logrono EF Selenium Servers</description>
+        <description>Start Logrono EF Scheduled Servers</description>
         <jobref group='Infrastructure/Subjobs' name='Operations SlimCost' nodeStep='true'>
-          <arg line='-Action start -Panel logrono-fr -Target Selenium+EF+SlimCost' />
+          <arg line='-Action start -Panel logrono-fr -Target AutoStart+EF+SlimCost' />
         </jobref>
       </command>
       <pluginConfig>
@@ -34,6 +34,6 @@
       </pluginConfig>
     </sequence>
     <timeout>15m</timeout>
-    <uuid>85e9916e-446b-4d07-8c57-a5375fa502db</uuid>
+    <uuid>e8f50b4e-4889-4a41-bbbf-58c71a0c26ea</uuid>
   </job>
 </joblist>
