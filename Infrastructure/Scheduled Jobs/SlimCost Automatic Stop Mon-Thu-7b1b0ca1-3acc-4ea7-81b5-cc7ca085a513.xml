@@ -9,7 +9,7 @@
     <nodeFilterEditable>true</nodeFilterEditable>
     <schedule>
       <month month='*' />
-      <time hour='18-20' minute='00,30' seconds='0' />
+      <time hour='18,20' minute='00' seconds='0' />
       <weekday day='MON-THU' />
       <year year='*' />
     </schedule>

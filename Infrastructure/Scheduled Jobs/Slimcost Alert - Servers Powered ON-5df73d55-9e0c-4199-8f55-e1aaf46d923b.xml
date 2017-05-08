@@ -1,0 +1,37 @@
+<joblist>
+  <job>
+    <description>Slimcost Alert - Servers Powered ON</description>
+    <executionEnabled>true</executionEnabled>
+    <group>Infrastructure/Scheduled Jobs</group>
+    <id>5df73d55-9e0c-4199-8f55-e1aaf46d923b</id>
+    <loglevel>INFO</loglevel>
+    <name>Slimcost Alert - Servers Powered ON</name>
+    <nodeFilterEditable>false</nodeFilterEditable>
+    <schedule>
+      <month month='*' />
+      <time hour='20' minute='25' seconds='0' />
+      <weekday day='*' />
+      <year year='*' />
+    </schedule>
+    <scheduleEnabled>true</scheduleEnabled>
+    <sequence keepgoing='false' strategy='node-first'>
+      <command>
+        <jobref group='Infrastructure' name='Infra Operations'>
+          <arg line='-Action checkIR -Panel logrono-es' />
+        </jobref>
+      </command>
+      <command>
+        <jobref group='Infrastructure' name='Infra Operations'>
+          <arg line='-Action checkIR -Panel logrono-fr' />
+        </jobref>
+      </command>
+      <pluginConfig>
+        <WorkflowStrategy>
+          <node-first />
+        </WorkflowStrategy>
+      </pluginConfig>
+    </sequence>
+    <timeout>5m</timeout>
+    <uuid>5df73d55-9e0c-4199-8f55-e1aaf46d923b</uuid>
+  </job>
+</joblist>
