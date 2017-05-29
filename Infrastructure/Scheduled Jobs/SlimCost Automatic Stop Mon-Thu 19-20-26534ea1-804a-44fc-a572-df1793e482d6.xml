@@ -1,0 +1,33 @@
+<joblist>
+  <job>
+    <description>SlimCost Automatic Stop Monday-Thursday 19-20</description>
+    <executionEnabled>true</executionEnabled>
+    <group>Infrastructure/Scheduled Jobs</group>
+    <id>26534ea1-804a-44fc-a572-df1793e482d6</id>
+    <loglevel>INFO</loglevel>
+    <name>SlimCost Automatic Stop Mon-Thu 19-20</name>
+    <nodeFilterEditable>true</nodeFilterEditable>
+    <schedule>
+      <month month='*' />
+      <time hour='19,20' minute='00' seconds='0' />
+      <weekday day='MON-THU' />
+      <year year='*' />
+    </schedule>
+    <scheduleEnabled>true</scheduleEnabled>
+    <sequence keepgoing='true' strategy='node-first'>
+      <command>
+        <description>Stop Logrono EF Servers</description>
+        <jobref group='Infrastructure/Subjobs' name='Operations SlimCost' nodeStep='true'>
+          <arg line='-Action stop -Panel logrono-fr -Target EF+SlimCost+19pm' />
+        </jobref>
+      </command>
+      <pluginConfig>
+        <WorkflowStrategy>
+          <node-first />
+        </WorkflowStrategy>
+      </pluginConfig>
+    </sequence>
+    <timeout>25m</timeout>
+    <uuid>26534ea1-804a-44fc-a572-df1793e482d6</uuid>
+  </job>
+</joblist>

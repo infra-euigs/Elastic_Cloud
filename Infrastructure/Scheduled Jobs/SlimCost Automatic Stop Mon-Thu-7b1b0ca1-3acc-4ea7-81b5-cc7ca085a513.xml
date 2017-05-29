@@ -30,7 +30,7 @@
       <command>
         <description>Stop Logrono EF Servers</description>
         <jobref group='Infrastructure/Subjobs' name='Operations SlimCost' nodeStep='true'>
-          <arg line='-Action stop -Panel logrono-fr -Target EF+SlimCost' />
+          <arg line='-Action stop -Panel logrono-fr -Target EF+SlimCost+18pm' />
         </jobref>
       </command>
       <command>
