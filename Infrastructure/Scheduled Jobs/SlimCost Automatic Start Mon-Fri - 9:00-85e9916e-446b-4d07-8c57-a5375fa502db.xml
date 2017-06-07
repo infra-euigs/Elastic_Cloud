@@ -27,6 +27,11 @@
           <arg line='-Action start -Panel logrono-fr -Target Selenium+EF+SlimCost' />
         </jobref>
       </command>
+      <command>
+        <jobref group='Infrastructure/Subjobs' name='Operations SlimCost Node' nodeStep='true'>
+          <arg line='-Action start -Panel logrono-fr -Target fdessisnet01.internal.lan' />
+        </jobref>
+      </command>
       <pluginConfig>
         <WorkflowStrategy>
           <node-first />
