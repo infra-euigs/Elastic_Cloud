@@ -14,6 +14,7 @@
     <group>EUIGS</group>
     <id>87bfc642-461c-4dda-a163-5aef0789fb7d</id>
     <loglevel>INFO</loglevel>
+    <multipleExecutions>true</multipleExecutions>
     <name>Operations</name>
     <nodeFilterEditable>true</nodeFilterEditable>
     <scheduleEnabled>true</scheduleEnabled>

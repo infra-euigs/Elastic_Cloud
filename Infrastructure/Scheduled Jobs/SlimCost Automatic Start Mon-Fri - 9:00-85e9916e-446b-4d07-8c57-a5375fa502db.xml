@@ -28,6 +28,12 @@
         </jobref>
       </command>
       <command>
+        <description>Start Logrono EF IMP-EspacePerso Servers</description>
+        <jobref group='Infrastructure/Subjobs' name='Operations SlimCost' nodeStep='true'>
+          <arg line='-Action start -Panel logrono-fr -Target IMP-EspacePerso' />
+        </jobref>
+      </command>
+      <command>
         <jobref group='Infrastructure/Subjobs' name='Operations SlimCost Node' nodeStep='true'>
           <arg line='-Action start -Panel logrono-fr -Target fdessisnet01.internal.lan' />
         </jobref>

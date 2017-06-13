@@ -14,6 +14,7 @@
     <group>Spain</group>
     <id>fcffa5e5-d547-4f6b-8e73-bf357af4d6c7</id>
     <loglevel>INFO</loglevel>
+    <multipleExecutions>true</multipleExecutions>
     <name>Operations</name>
     <nodeFilterEditable>true</nodeFilterEditable>
     <scheduleEnabled>true</scheduleEnabled>

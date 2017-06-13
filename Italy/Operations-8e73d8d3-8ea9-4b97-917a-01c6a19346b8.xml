@@ -14,6 +14,7 @@
     <group>Italy</group>
     <id>8e73d8d3-8ea9-4b97-917a-01c6a19346b8</id>
     <loglevel>INFO</loglevel>
+    <multipleExecutions>true</multipleExecutions>
     <name>Operations</name>
     <nodeFilterEditable>true</nodeFilterEditable>
     <scheduleEnabled>true</scheduleEnabled>

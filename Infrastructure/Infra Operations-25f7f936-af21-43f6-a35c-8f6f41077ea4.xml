@@ -14,6 +14,7 @@
     <group>Infrastructure</group>
     <id>25f7f936-af21-43f6-a35c-8f6f41077ea4</id>
     <loglevel>INFO</loglevel>
+    <multipleExecutions>true</multipleExecutions>
     <name>Infra Operations</name>
     <nodeFilterEditable>true</nodeFilterEditable>
     <scheduleEnabled>true</scheduleEnabled>

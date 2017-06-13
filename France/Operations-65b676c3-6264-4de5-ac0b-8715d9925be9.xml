@@ -14,6 +14,7 @@
     <group>France</group>
     <id>65b676c3-6264-4de5-ac0b-8715d9925be9</id>
     <loglevel>INFO</loglevel>
+    <multipleExecutions>true</multipleExecutions>
     <name>Operations</name>
     <nodeFilterEditable>true</nodeFilterEditable>
     <scheduleEnabled>true</scheduleEnabled>
