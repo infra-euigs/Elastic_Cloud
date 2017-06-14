@@ -7,11 +7,17 @@
     <loglevel>INFO</loglevel>
     <name>Generate JSONs</name>
     <nodeFilterEditable>true</nodeFilterEditable>
+    <schedule>
+      <month month='*' />
+      <time hour='07' minute='00' seconds='0' />
+      <weekday day='*' />
+      <year year='*' />
+    </schedule>
     <scheduleEnabled>true</scheduleEnabled>
     <sequence keepgoing='false' strategy='node-first'>
       <command>
         <scriptargs />
-        <scriptfile>/opt/scripts/rundeck/json_nodesgenerator.sh</scriptfile>
+        <scriptfile>/opt/scripts/rundeck/json_generator.sh</scriptfile>
       </command>
     </sequence>
     <timeout>30</timeout>

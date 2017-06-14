@@ -1,0 +1,36 @@
+<joblist>
+  <job>
+    <context>
+      <options preserveOrder='true'>
+        <option enforcedvalues='true' name='Action' required='true' value='stop' valuesUrl='http://jobresources.euigs.es/elastic_cloud/resources/actions.json'>
+          <description>Action</description>
+        </option>
+        <option enforcedvalues='true' name='Panel' required='true' value='logrono-fr' values='logrono-fr' />
+        <option enforcedvalues='true' name='Target' required='true' valuesUrl='http://jobresources.euigs.es/elastic_cloud/resources/services-EF.json' />
+      </options>
+    </context>
+    <description>Service Operations</description>
+    <executionEnabled>true</executionEnabled>
+    <group>France</group>
+    <id>83a8cb47-e6d2-49a5-895a-bbe6fa3f03f2</id>
+    <loglevel>INFO</loglevel>
+    <multipleExecutions>true</multipleExecutions>
+    <name>Service Operations</name>
+    <nodeFilterEditable>true</nodeFilterEditable>
+    <scheduleEnabled>true</scheduleEnabled>
+    <sequence keepgoing='false' strategy='node-first'>
+      <command>
+        <jobref group='Infrastructure/Subjobs' name='Operations SlimCost' nodeStep='true'>
+          <arg line='-Panel ${option.Panel} -Target ${option.Target}+EF+SlimCost -Action ${option.Action}' />
+        </jobref>
+      </command>
+      <pluginConfig>
+        <WorkflowStrategy>
+          <node-first />
+        </WorkflowStrategy>
+      </pluginConfig>
+    </sequence>
+    <timeout>50m</timeout>
+    <uuid>83a8cb47-e6d2-49a5-895a-bbe6fa3f03f2</uuid>
+  </job>
+</joblist>
