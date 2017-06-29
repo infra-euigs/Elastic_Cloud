@@ -28,9 +28,9 @@
         </jobref>
       </command>
       <command>
-        <description>Start Logrono EF INT-EspacePerso Servers</description>
+        <description>Start Logrono EF Int-EspacePerso Servers</description>
         <jobref group='Infrastructure/Subjobs' name='Operations SlimCost' nodeStep='true'>
-          <arg line='-Action start -Panel logrono-fr -Target INT-EspacePerso' />
+          <arg line='-Action start -Panel logrono-fr -Target Int-EspacePerso' />
         </jobref>
       </command>
       <command>
