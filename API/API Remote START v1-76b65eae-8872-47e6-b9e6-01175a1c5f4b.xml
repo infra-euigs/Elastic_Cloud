@@ -7,7 +7,7 @@
         </option>
       </options>
     </context>
-    <description>API Remote START</description>
+    <description>API Remote START v1</description>
     <dispatch>
       <excludePrecedence>true</excludePrecedence>
       <keepgoing>false</keepgoing>
@@ -16,16 +16,15 @@
     </dispatch>
     <executionEnabled>true</executionEnabled>
     <group>API</group>
-    <id>6e175dac-2afa-4535-92ec-cd5cac42ddf2</id>
+    <id>76b65eae-8872-47e6-b9e6-01175a1c5f4b</id>
     <loglevel>INFO</loglevel>
     <multipleExecutions>true</multipleExecutions>
-    <name>API Remote START</name>
+    <name>API Remote START v1</name>
     <nodeFilterEditable>false</nodeFilterEditable>
     <nodefilters>
       <filter>hostname: ${option.Target}</filter>
     </nodefilters>
     <nodesSelectedByDefault>true</nodesSelectedByDefault>
-    <retry>3</retry>
     <scheduleEnabled>true</scheduleEnabled>
     <sequence keepgoing='false' strategy='node-first'>
       <command>
@@ -35,19 +34,12 @@
           </configuration>
         </node-step-plugin>
       </command>
-      <command>
-        <description>Check Startup of Server</description>
-        <jobref group='API/Subjobs' name='Check_Server_UP'>
-          <arg line='-Host ${option.Target}' />
-        </jobref>
-      </command>
       <pluginConfig>
         <WorkflowStrategy>
           <node-first />
         </WorkflowStrategy>
       </pluginConfig>
     </sequence>
-    <timeout>3m</timeout>
-    <uuid>6e175dac-2afa-4535-92ec-cd5cac42ddf2</uuid>
+    <uuid>76b65eae-8872-47e6-b9e6-01175a1c5f4b</uuid>
   </job>
 </joblist>

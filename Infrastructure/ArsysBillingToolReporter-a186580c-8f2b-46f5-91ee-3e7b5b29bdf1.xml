@@ -1,0 +1,25 @@
+<joblist>
+  <job>
+    <description>Generate a report with systems created each day, by panel</description>
+    <executionEnabled>true</executionEnabled>
+    <group>Infrastructure</group>
+    <id>a186580c-8f2b-46f5-91ee-3e7b5b29bdf1</id>
+    <loglevel>INFO</loglevel>
+    <name>ArsysBillingToolReporter</name>
+    <nodeFilterEditable>true</nodeFilterEditable>
+    <scheduleEnabled>true</scheduleEnabled>
+    <sequence keepgoing='false' strategy='node-first'>
+      <command>
+        <scriptargs />
+        <scriptfile>/opt/scripts/rundeck/arsysBillingToolReporter.sh</scriptfile>
+      </command>
+      <pluginConfig>
+        <WorkflowStrategy>
+          <node-first />
+        </WorkflowStrategy>
+      </pluginConfig>
+    </sequence>
+    <timeout>30</timeout>
+    <uuid>a186580c-8f2b-46f5-91ee-3e7b5b29bdf1</uuid>
+  </job>
+</joblist>
