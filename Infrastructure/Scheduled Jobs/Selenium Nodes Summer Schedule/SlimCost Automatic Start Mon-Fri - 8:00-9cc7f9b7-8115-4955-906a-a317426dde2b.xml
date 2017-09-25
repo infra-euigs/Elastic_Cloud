@@ -1,19 +1,24 @@
 <joblist>
   <job>
-    <description>SlimCost Automatic Start Monday-Friday</description>
+    <description>SlimCost Automatic Start [Monday-Friday]. Summer Schedule</description>
     <executionEnabled>true</executionEnabled>
-    <group>Infrastructure/Scheduled Jobs</group>
-    <id>85e9916e-446b-4d07-8c57-a5375fa502db</id>
+    <group>Infrastructure/Scheduled Jobs/Selenium Nodes Summer Schedule</group>
+    <id>9cc7f9b7-8115-4955-906a-a317426dde2b</id>
     <loglevel>INFO</loglevel>
-    <name>SlimCost Automatic Start Mon-Fri - 9:00</name>
+    <name>SlimCost Automatic Start Mon-Fri - 8:00</name>
     <nodeFilterEditable>true</nodeFilterEditable>
+    <notification>
+      <onfailure>
+        <email attachLog='true' recipients='infrastructure@euigs.com,qa@euigs.com' subject='[ERROR] Start FAILED - Selenium Nodes Summer Schedule [AS, EF]' />
+      </onfailure>
+    </notification>
     <schedule>
       <month month='*' />
-      <time hour='09' minute='02' seconds='0' />
+      <time hour='08' minute='00' seconds='0' />
       <weekday day='FRI,MON,THU,TUE,WED' />
       <year year='*' />
     </schedule>
-    <scheduleEnabled>true</scheduleEnabled>
+    <scheduleEnabled>false</scheduleEnabled>
     <sequence keepgoing='true' strategy='node-first'>
       <command>
         <description>Start Logrono AS Selenium Servers</description>
@@ -27,17 +32,6 @@
           <arg line='-Action start -Panel logrono-fr -Target Selenium+EF+SlimCost' />
         </jobref>
       </command>
-      <command>
-        <description>Start Logrono EF Int-EspacePerso Servers</description>
-        <jobref group='Infrastructure/Subjobs' name='Operations SlimCost' nodeStep='true'>
-          <arg line='-Action start -Panel logrono-fr -Target Int-EspacePerso' />
-        </jobref>
-      </command>
-      <command>
-        <jobref group='Infrastructure/Subjobs' name='Operations SlimCost Node' nodeStep='true'>
-          <arg line='-Action start -Panel logrono-fr -Target fdessisnet01.internal.lan' />
-        </jobref>
-      </command>
       <pluginConfig>
         <WorkflowStrategy>
           <node-first />
@@ -45,6 +39,6 @@
       </pluginConfig>
     </sequence>
     <timeout>15m</timeout>
-    <uuid>85e9916e-446b-4d07-8c57-a5375fa502db</uuid>
+    <uuid>9cc7f9b7-8115-4955-906a-a317426dde2b</uuid>
   </job>
 </joblist>

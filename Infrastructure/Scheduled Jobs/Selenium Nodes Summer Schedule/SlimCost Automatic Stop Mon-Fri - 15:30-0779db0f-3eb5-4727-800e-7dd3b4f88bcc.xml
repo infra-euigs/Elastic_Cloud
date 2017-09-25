@@ -1,0 +1,44 @@
+<joblist>
+  <job>
+    <description>SlimCost Automatic Stop [Monday-Friday]. Summer Schedule</description>
+    <executionEnabled>true</executionEnabled>
+    <group>Infrastructure/Scheduled Jobs/Selenium Nodes Summer Schedule</group>
+    <id>0779db0f-3eb5-4727-800e-7dd3b4f88bcc</id>
+    <loglevel>INFO</loglevel>
+    <name>SlimCost Automatic Stop Mon-Fri - 15:30</name>
+    <nodeFilterEditable>true</nodeFilterEditable>
+    <notification>
+      <onfailure>
+        <email attachLog='true' recipients='infrastructure@euigs.com,qa@euigs.com' subject='[ERROR] Stop FAILED - Selenium Nodes Summer Schedule [AS, EF]' />
+      </onfailure>
+    </notification>
+    <schedule>
+      <month month='*' />
+      <time hour='15' minute='30' seconds='0' />
+      <weekday day='FRI,MON,THU,TUE,WED' />
+      <year year='*' />
+    </schedule>
+    <scheduleEnabled>false</scheduleEnabled>
+    <sequence keepgoing='true' strategy='node-first'>
+      <command>
+        <description>Stop Logrono AS Servers</description>
+        <jobref group='Infrastructure/Subjobs' name='Operations SlimCost' nodeStep='true'>
+          <arg line='-Action stop -Panel logrono-es -Target SlimCost+AS+Selenium+Integration' />
+        </jobref>
+      </command>
+      <command>
+        <description>Stop Logrono EF Servers</description>
+        <jobref group='Infrastructure/Subjobs' name='Operations SlimCost' nodeStep='true'>
+          <arg line='-Action stop -Panel logrono-fr -Target SlimCost+Selenium+Integration+EF' />
+        </jobref>
+      </command>
+      <pluginConfig>
+        <WorkflowStrategy>
+          <node-first />
+        </WorkflowStrategy>
+      </pluginConfig>
+    </sequence>
+    <timeout>25m</timeout>
+    <uuid>0779db0f-3eb5-4727-800e-7dd3b4f88bcc</uuid>
+  </job>
+</joblist>

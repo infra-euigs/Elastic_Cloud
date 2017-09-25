@@ -7,12 +7,6 @@
     <loglevel>INFO</loglevel>
     <name>SlimCost Automatic Stop Mon-Friday 15pm</name>
     <nodeFilterEditable>true</nodeFilterEditable>
-    <schedule>
-      <month month='*' />
-      <time hour='14' minute='56' seconds='0' />
-      <weekday day='FRI,MON,THU,TUE' />
-      <year year='*' />
-    </schedule>
     <scheduleEnabled>true</scheduleEnabled>
     <sequence keepgoing='true' strategy='node-first'>
       <command>

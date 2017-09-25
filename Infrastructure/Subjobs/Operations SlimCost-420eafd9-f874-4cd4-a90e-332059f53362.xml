@@ -10,6 +10,7 @@
     <dispatch>
       <excludePrecedence>true</excludePrecedence>
       <keepgoing>true</keepgoing>
+      <rankAttribute>deploy</rankAttribute>
       <rankOrder>ascending</rankOrder>
       <threadcount>1</threadcount>
     </dispatch>
